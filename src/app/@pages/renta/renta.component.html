@@ -1,0 +1,54 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+
+  <img
+    src=".\assets\logo-banco-falabella.png"
+  />
+</div>
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+<div>
+    <div class="card-container">
+
+        <div class="card" target="_blank" rel="noopener">
+
+          <div class="contentCard">
+              <h2 class="color:gray"><span class="verdefala">Ayúdanos </span> con unos datos más</h2>
+          </div>
+
+          <div class="contentCard">
+            <p>Porque te queremos dar una oferta hecha a la medida para ti, necesitamos saber un poco más.</p>
+          </div>
+          <form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="contentCard">
+              <label>¿Cuál es tu renta líquida/ingreso mensual?</label>
+              <input class="form-control" (ngModelChange)="onChange(f)" name="renta" ngModel required [placeholder]="placeholderRenta">
+              <p class="msjError" *ngIf="mostrarMsjRenta">* Debe ingresar un monto</p>
+            </div>
+
+            <div class="buttonCard">
+              <div class="example-button-row">
+                <button type="submit" [disabled]="f.invalid" mat-flat-button>CONTINUAR</button>
+              </div>
+            </div>
+          </form>
+          <div class="mensajeRequest">
+            <div *ngIf="mostrarMsjReqExitoso">
+              <p><img color="green" src=".\assets\done.png"/>Sus datos fueron enviados correctamente, lo contactaremos a la brevedad.</p>
+            </div>
+            <div *ngIf="mostrarMsjReqFallido">
+              <p><img src=".\assets\error.png"/> Hubo un error en el envío de sus datos, por favor intente nuevamente.</p>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="divTab">
+    <mat-tab-group class="tab">
+      <mat-tab label="">
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+</div>

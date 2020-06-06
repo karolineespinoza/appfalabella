@@ -1,0 +1,97 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    src=".\assets\logo-banco-falabella.png"
+  />
+</div>
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+  <div>
+
+    <div class="texto">
+      <h1>Tu Cuenta Corriente</h1>
+      <h1 class="h2negrita">100% on line</h1>
+    </div>
+
+    <div class="card-container">
+      <div class="cardProp" target="_blank" rel="noopener">
+        <div class="logos">
+          <div class="icono">
+            <img class="iconos"src=".\assets\ico-cmr.png"/>
+          </div>
+          <div class="textoIcono">
+            <p>Acumula <b>CMR Puntos</b></p>
+          </div>
+
+        </div>
+
+        <div class="logos">
+          <div class="icono">
+          <img class="iconos" src=".\assets\opu.png"/>
+        </div>
+        <div class="textoIcono">
+          <p><b>Descuentos exclusivos</b></p>
+        </div>
+        </div>
+
+        <div class="logos">
+          <div class="icono">
+            <img class="iconos" style="height: 16px !important;" src=".\assets\visa-blue-png-2.png"/>
+          </div>
+          <div class="textoIcono">
+            <p>Compra en todo el mundo</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="card" target="_blank" rel="noopener">
+
+        <div class="contentCard">
+            <h2 class="color:gray"><span class="verdefala">Ingresa </span> tus datos.</h2>
+        </div>
+
+        <div class="contentCard">
+          <h3>Solo necesitas tener tu cédula para realizar la solicitud.</h3>
+        </div>
+
+        <form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="contentCard">
+              <label>Rut</label>
+              <input class="form-control" (ngModelChange)="onChange(f,'rut')" name="rut" ngModel placeholder={{placeholderRut}}>
+              <p class="msjError" *ngIf="mostrarMsjRut">* Debe ingresar un RUT</p>
+            </div>
+
+            <div class="contentCard">
+              <label>Celular</label>
+              <input class="form-control" (ngModelChange)="onChange(f,'numeroCelular')" name="numeroCelular" ngModel required placeholder={{placeholderCelular}}>
+              <p class="msjError" *ngIf="mostrarMsjNumero">* Debe ingresar un número de celular</p>
+            </div>
+
+            <div class="contentCard">
+              <label>Correo electrónico</label>
+              <input class="form-control" (ngModelChange)="onChange(f,'email')" name="email" ngModel required  placeholder={{placeholderCorreo}}>
+              <p class="msjError" *ngIf="mostrarMsjEmail">* Debe ingresar un correo electrónico.</p>
+            </div>
+
+            <div class="buttonCard">
+              <div class="example-button-row">
+                <button type="submit" [disabled]="f.invalid" mat-flat-button routerLink="/renta" color="primary">CONTINUAR</button>
+              </div>
+            </div>
+            <router-outlet></router-outlet>
+
+        </form>
+
+      </div>
+
+    </div>
+    <mat-tab-group class="tab">
+      <mat-tab label="">
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+
+</div>
