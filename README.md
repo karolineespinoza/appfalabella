@@ -17,6 +17,6 @@ ng serve
 
 5. Desde su navegador, vaya a la siguiente url: 
 (http://localhost:4200)
-* * Asegúrese que el microservicio se está ejecutando.*
+_* Asegúrese que el microservicio se está ejecutando._
 
 6. Finalmente, navegue entre las pantallas para enviar los datos al microservicio. 
